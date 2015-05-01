@@ -32,9 +32,6 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.JButton;
 
-import java.awt.FlowLayout;
-import java.awt.Panel;
-
 import javax.swing.JTextArea;
 import javax.swing.border.TitledBorder;
 
@@ -65,7 +62,7 @@ public class MenjacnicaGUI extends JFrame {
 	private JMenuItem mntmObrisiKurs;
 	private JMenuItem mntmIzvrsiZamenu;
 	private JScrollPane scrollPane_1;
-	private static JTextArea textAreaStatus;
+	public static JTextArea textAreaStatus= new JTextArea();
 
 	/**
 	 * Launch the application.
@@ -107,6 +104,7 @@ public class MenjacnicaGUI extends JFrame {
 		contentPane.add(getPanel(), BorderLayout.EAST);
 		contentPane.add(getScrollPane_1_1(), BorderLayout.SOUTH);
 	}
+	
 
 	private JMenuBar getMenuBar_1() {
 		if (menuBar == null) {
@@ -283,6 +281,11 @@ public class MenjacnicaGUI extends JFrame {
 	private JButton getBtnDodajKurs() {
 		if (btnDodajKurs == null) {
 			btnDodajKurs = new JButton("Dodaj kurs");
+			btnDodajKurs.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					new DodajKursGUI().setVisible(true);
+				}
+			});
 			btnDodajKurs.setBounds(12, 13, 116, 25);
 		}
 		return btnDodajKurs;
@@ -306,6 +309,11 @@ public class MenjacnicaGUI extends JFrame {
 	private JMenuItem getMntmDodajKurs() {
 		if (mntmDodajKurs == null) {
 			mntmDodajKurs = new JMenuItem("Dodaj kurs");
+			mntmDodajKurs.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					new DodajKursGUI().setVisible(true);
+				}
+			});
 		}
 		return mntmDodajKurs;
 	}
