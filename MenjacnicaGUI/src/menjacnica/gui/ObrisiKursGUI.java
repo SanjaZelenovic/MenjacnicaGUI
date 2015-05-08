@@ -181,8 +181,20 @@ public class ObrisiKursGUI extends JFrame {
 				public void actionPerformed(ActionEvent arg0) {
 					if (chckbxZaistaObrisiKurs.isSelected()) {
 						btnObrisi.setEnabled(true);
+						textFieldSifra.setEditable(true);
+						textFieldNaziv.setEditable(true);
+						textFieldProdajni.setEditable(true);
+						textFieldKupovni.setEditable(true);
+						textFieldSrednji.setEditable(true);
+						textFieldSkraceni.setEditable(true);
 					} else {
 						btnObrisi.setEnabled(false);
+						textFieldSifra.setEditable(false);
+						textFieldNaziv.setEditable(false);
+						textFieldProdajni.setEditable(false);
+						textFieldKupovni.setEditable(false);
+						textFieldSrednji.setEditable(false);
+						textFieldSkraceni.setEditable(false);
 					}
 				}
 			});

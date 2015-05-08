@@ -9,27 +9,34 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
 
 public class DodajKursGUI extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JLabel lblSifra;
 	private JLabel lblNaziv;
-	private JTextField textFieldSifra;
-	private JTextField textFieldNaziv;
 	private JLabel lblProdajniKurs;
 	private JLabel lblKupovniKurs;
 	private JTextField textFieldProdajni;
-	private JTextField textFieldKupovni;
 	private JLabel lblSrednjiKurs;
 	private JLabel lblSkraceniNaziv;
 	private JTextField textFieldSrednji;
-	private JTextField textFieldSkraceni;
-	private JButton btnNewButton;
-	private JButton btnNewButton_1;
+	private JButton btnNewButtonDodaj;
+	private JButton btnNewButtonOdustani;
+	private JTextField textFieldSifra;
+	private JTextField textFieldNaziv;
+	private JTextField textFieldProdajniKurs;
+	private JTextField textFieldKupovniKurs;
+	private JTextField textFieldSrednjiKurs;
+	private JTextField textFieldSkraceniNaziv;
 
 	/**
 	 * Launch the application.
@@ -62,136 +69,142 @@ public class DodajKursGUI extends JFrame {
 		contentPane.setLayout(null);
 		contentPane.add(getLblSifra());
 		contentPane.add(getLblNaziv());
-		contentPane.add(getTextField());
-		contentPane.add(getTextField_1());
 		contentPane.add(getLblProdajniKurs());
 		contentPane.add(getLblKupovniKurs());
-		contentPane.add(getTextField_2());
-		contentPane.add(getTextField_3());
 		contentPane.add(getLblSrednjiKurs());
 		contentPane.add(getLblSkraceniNaziv());
-		contentPane.add(getTextFieldKupovni());
-		contentPane.add(getTextFieldSkraceni());
-		contentPane.add(getBtnNewButton());
-		contentPane.add(getBtnNewButton_1());
+		contentPane.add(getBtnNewButtonDodaj());
+		contentPane.add(getBtnNewButtonOdustani());
+		contentPane.add(getTextFieldSifra());
+		contentPane.add(getTextFieldNaziv());
+		contentPane.add(getTextFieldProdajniKurs());
+		contentPane.add(getTextFieldKupovniKurs());
+		contentPane.add(getTextFieldSrednjiKurs());
+		contentPane.add(getTextFieldSkraceniNaziv());
 	}
 	private JLabel getLblSifra() {
 		if (lblSifra == null) {
 			lblSifra = new JLabel("Sifra");
 			lblSifra.setHorizontalAlignment(SwingConstants.LEFT);
-			lblSifra.setBounds(50, 13, 56, 16);
+			lblSifra.setBounds(50, 13, 149, 16);
 		}
 		return lblSifra;
 	}
 	private JLabel getLblNaziv() {
 		if (lblNaziv == null) {
 			lblNaziv = new JLabel("Naziv");
-			lblNaziv.setBounds(260, 13, 56, 16);
+			lblNaziv.setBounds(260, 13, 149, 16);
 		}
 		return lblNaziv;
-	}
-	private JTextField getTextField() {
-		if (textFieldSifra == null) {
-			textFieldSifra = new JTextField();
-			textFieldSifra.setBounds(50, 42, 116, 22);
-			textFieldSifra.setColumns(10);
-		}
-		return textFieldSifra;
-	}
-	private JTextField getTextField_1() {
-		if (textFieldNaziv == null) {
-			textFieldNaziv = new JTextField();
-			textFieldNaziv.setBounds(260, 42, 116, 22);
-			textFieldNaziv.setColumns(10);
-		}
-		return textFieldNaziv;
 	}
 	private JLabel getLblProdajniKurs() {
 		if (lblProdajniKurs == null) {
 			lblProdajniKurs = new JLabel("Prodajni kurs");
-			lblProdajniKurs.setBounds(50, 77, 99, 16);
+			lblProdajniKurs.setBounds(50, 77, 149, 16);
 		}
 		return lblProdajniKurs;
 	}
 	private JLabel getLblKupovniKurs() {
 		if (lblKupovniKurs == null) {
 			lblKupovniKurs = new JLabel("Kupovni kurs");
-			lblKupovniKurs.setBounds(259, 77, 105, 16);
+			lblKupovniKurs.setBounds(259, 77, 150, 16);
 		}
 		return lblKupovniKurs;
 	}
-	private JTextField getTextField_2() {
-		if (textFieldProdajni == null) {
-			textFieldProdajni = new JTextField();
-			textFieldProdajni.setBounds(50, 106, 116, 22);
-			textFieldProdajni.setColumns(10);
-		}
-		return textFieldProdajni;
-	}
-	private JTextField getTextField_3() {
-		if (textFieldKupovni == null) {
-			textFieldKupovni = new JTextField();
-			textFieldKupovni.setBounds(260, 106, 116, 22);
-			textFieldKupovni.setColumns(10);
-		}
-		return textFieldKupovni;
-	}
+	
 	private JLabel getLblSrednjiKurs() {
 		if (lblSrednjiKurs == null) {
 			lblSrednjiKurs = new JLabel("Srednji kurs");
-			lblSrednjiKurs.setBounds(50, 141, 99, 16);
+			lblSrednjiKurs.setBounds(50, 141, 149, 16);
 		}
 		return lblSrednjiKurs;
 	}
 	private JLabel getLblSkraceniNaziv() {
 		if (lblSkraceniNaziv == null) {
 			lblSkraceniNaziv = new JLabel("Skraceni naziv");
-			lblSkraceniNaziv.setBounds(260, 141, 91, 16);
+			lblSkraceniNaziv.setBounds(260, 141, 149, 16);
 		}
 		return lblSkraceniNaziv;
 	}
-	private JTextField getTextFieldKupovni() {
-		if (textFieldKupovni == null) {
-			textFieldKupovni = new JTextField();
-			textFieldKupovni.setBounds(50, 170, 116, 22);
-			textFieldKupovni.setColumns(10);
-		}
-		return textFieldKupovni;
-	}
-	private JTextField getTextFieldSkraceni() {
-		if (textFieldSkraceni == null) {
-			textFieldSkraceni = new JTextField();
-			textFieldSkraceni.setBounds(260, 170, 116, 22);
-			textFieldSkraceni.setColumns(10);
-		}
-		return textFieldSkraceni;
-	}
-	private JButton getBtnNewButton() {
-		if (btnNewButton == null) {
-			btnNewButton = new JButton("Dodaj");
-			btnNewButton.addActionListener(new ActionListener() {
+	private JButton getBtnNewButtonDodaj() {
+		if (btnNewButtonDodaj == null) {
+			btnNewButtonDodaj = new JButton("Dodaj");
+			btnNewButtonDodaj.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
-					String svi = "Dodat = Sifra: " + textFieldSifra.getText() + ", Skraceni naziv: " + textFieldSkraceni.getText() + 
-							", Prodajni kurs: " + textFieldProdajni.getText() + ", Srednji kurs: " + textFieldSrednji.getText() + 
-							", Kupovni kurs: " + textFieldKupovni.getText() + ", Naziv: " + textFieldNaziv.getText();
-					
-					MenjacnicaGUI.textAreaStatus.append(svi + "\n");
+					try {
+						String svi = "Dodat = Sifra: " + textFieldSifra.getText() + ", Skraceni naziv: " + textFieldSkraceniNaziv.getText() + 
+								", Prodajni kurs: " + textFieldProdajniKurs.getText() + ", Srednji kurs: " + textFieldSrednjiKurs.getText() + 
+								", Kupovni kurs: " + textFieldKupovniKurs.getText() + ", Naziv: " + textFieldNaziv.getText();
+						
+						MenjacnicaGUI.textAreaStatus.append(svi + "\n");
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
 			});
-			btnNewButton.setBounds(50, 215, 116, 25);
+			btnNewButtonDodaj.setBounds(50, 215, 149, 25);
 		}
-		return btnNewButton;
+		return btnNewButtonDodaj;
 	}
-	private JButton getBtnNewButton_1() {
-		if (btnNewButton_1 == null) {
-			btnNewButton_1 = new JButton("Odustani");
-			btnNewButton_1.addActionListener(new ActionListener() {
+	private JButton getBtnNewButtonOdustani() {
+		if (btnNewButtonOdustani == null) {
+			btnNewButtonOdustani = new JButton("Odustani");
+			btnNewButtonOdustani.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					dispose();
 				}
 			});
-			btnNewButton_1.setBounds(260, 215, 116, 25);
+			btnNewButtonOdustani.setBounds(260, 215, 149, 25);
 		}
-		return btnNewButton_1;
+		return btnNewButtonOdustani;
+	}
+	private JTextField getTextFieldSifra() {
+		if (textFieldSifra == null) {
+			textFieldSifra = new JTextField();
+			textFieldSifra.setBounds(50, 42, 149, 22);
+			textFieldSifra.setColumns(10);
+		}
+		return textFieldSifra;
+	}
+	private JTextField getTextFieldNaziv() {
+		if (textFieldNaziv == null) {
+			textFieldNaziv = new JTextField();
+			textFieldNaziv.setBounds(260, 42, 149, 22);
+			textFieldNaziv.setColumns(10);
+		}
+		return textFieldNaziv;
+	}
+	private JTextField getTextFieldProdajniKurs() {
+		if (textFieldProdajniKurs == null) {
+			textFieldProdajniKurs = new JTextField();
+			textFieldProdajniKurs.setBounds(50, 106, 149, 22);
+			textFieldProdajniKurs.setColumns(10);
+		}
+		return textFieldProdajniKurs;
+	}
+	private JTextField getTextFieldKupovniKurs() {
+		if (textFieldKupovniKurs == null) {
+			textFieldKupovniKurs = new JTextField();
+			textFieldKupovniKurs.setBounds(260, 106, 149, 22);
+			textFieldKupovniKurs.setColumns(10);
+		}
+		return textFieldKupovniKurs;
+	}
+	private JTextField getTextFieldSrednjiKurs() {
+		if (textFieldSrednjiKurs == null) {
+			textFieldSrednjiKurs = new JTextField();
+			textFieldSrednjiKurs.setBounds(50, 170, 149, 22);
+			textFieldSrednjiKurs.setColumns(10);
+		}
+		return textFieldSrednjiKurs;
+	}
+	private JTextField getTextFieldSkraceniNaziv() {
+		if (textFieldSkraceniNaziv == null) {
+			textFieldSkraceniNaziv = new JTextField();
+			textFieldSkraceniNaziv.setBounds(260, 170, 149, 22);
+			textFieldSkraceniNaziv.setColumns(10);
+		}
+		return textFieldSkraceniNaziv;
 	}
 }

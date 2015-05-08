@@ -40,9 +40,15 @@ import java.awt.event.ActionEvent;
 import java.io.File;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import javax.swing.UIManager;
+import java.awt.Color;
 
 public class MenjacnicaGUI extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JMenuBar menuBar;
 	private JMenu mnNewMenu;
@@ -91,7 +97,7 @@ public class MenjacnicaGUI extends JFrame {
 				ugasiProgram();
 			}
 		});
-		setIconImage(Toolkit.getDefaultToolkit().getImage(MenjacnicaGUI.class.getResource("/com/sun/java/swing/plaf/windows/icons/Computer.gif")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(MenjacnicaGUI.class.getResource("/icons/exchange.png")));
 		setTitle("Menjacnica");
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setBounds(100, 100, 602, 442);
@@ -141,7 +147,7 @@ public class MenjacnicaGUI extends JFrame {
 				}
 			});
 			mntmNewMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, InputEvent.CTRL_MASK));
-			mntmNewMenuItem.setIcon(new ImageIcon(MenjacnicaGUI.class.getResource("/com/sun/java/swing/plaf/windows/icons/Directory.gif")));
+			mntmNewMenuItem.setIcon(new ImageIcon(MenjacnicaGUI.class.getResource("/icons/open.png")));
 		}
 		return mntmNewMenuItem;
 	}
@@ -164,7 +170,7 @@ public class MenjacnicaGUI extends JFrame {
 				}
 			});
 			mntmSave.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_MASK));
-			mntmSave.setIcon(new ImageIcon(MenjacnicaGUI.class.getResource("/com/sun/java/swing/plaf/windows/icons/FloppyDrive.gif")));
+			mntmSave.setIcon(new ImageIcon(MenjacnicaGUI.class.getResource("/icons/save.png")));
 		}
 		return mntmSave;
 	}
@@ -178,6 +184,7 @@ public class MenjacnicaGUI extends JFrame {
 	private JMenuItem getMntmExit() {
 		if (mntmExit == null) {
 			mntmExit = new JMenuItem("Exit");
+			mntmExit.setIcon(new ImageIcon(MenjacnicaGUI.class.getResource("/icons/exit.png")));
 			mntmExit.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					ugasiProgram();
@@ -197,6 +204,7 @@ public class MenjacnicaGUI extends JFrame {
 	private JMenuItem getMntmAbout() {
 		if (mntmAbout == null) {
 			mntmAbout = new JMenuItem("About");
+			mntmAbout.setIcon(new ImageIcon(MenjacnicaGUI.class.getResource("/icons/about.png")));
 			mntmAbout.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					JOptionPane.showMessageDialog(contentPane, "Autor: Sanja Zelenovic, Verzija programa: 1.0", "Podaci o autoru", JOptionPane.INFORMATION_MESSAGE);
@@ -319,6 +327,7 @@ public class MenjacnicaGUI extends JFrame {
 	private JMenuItem getMntmDodajKurs() {
 		if (mntmDodajKurs == null) {
 			mntmDodajKurs = new JMenuItem("Dodaj kurs");
+			mntmDodajKurs.setIcon(new ImageIcon(MenjacnicaGUI.class.getResource("/icons/add.png")));
 			mntmDodajKurs.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					new DodajKursGUI().setVisible(true);
@@ -330,6 +339,7 @@ public class MenjacnicaGUI extends JFrame {
 	private JMenuItem getMntmObrisiKurs() {
 		if (mntmObrisiKurs == null) {
 			mntmObrisiKurs = new JMenuItem("Obrisi kurs");
+			mntmObrisiKurs.setIcon(new ImageIcon(MenjacnicaGUI.class.getResource("/icons/delete.png")));
 			mntmObrisiKurs.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					new ObrisiKursGUI().setVisible(true);
@@ -341,6 +351,7 @@ public class MenjacnicaGUI extends JFrame {
 	private JMenuItem getMntmIzvrsiZamenu() {
 		if (mntmIzvrsiZamenu == null) {
 			mntmIzvrsiZamenu = new JMenuItem("Izvrsi zamenu");
+			mntmIzvrsiZamenu.setIcon(new ImageIcon(MenjacnicaGUI.class.getResource("/icons/switch.png")));
 			mntmIzvrsiZamenu.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					new IzvrsiZamenuGUI().setVisible(true);
@@ -360,7 +371,7 @@ public class MenjacnicaGUI extends JFrame {
 	private JTextArea getTextArea() {
 		if (textAreaStatus == null) {
 			textAreaStatus = new JTextArea();
-			textAreaStatus.setBorder(new TitledBorder(null, "STATUS", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+			textAreaStatus.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "STATUS", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 			textAreaStatus.setWrapStyleWord(true);
 		}
 		return textAreaStatus;
