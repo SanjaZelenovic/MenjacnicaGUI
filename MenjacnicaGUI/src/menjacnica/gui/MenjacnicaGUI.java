@@ -42,6 +42,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.UIManager;
 import java.awt.Color;
+import javax.swing.border.LineBorder;
 
 public class MenjacnicaGUI extends JFrame {
 
@@ -371,7 +372,7 @@ public class MenjacnicaGUI extends JFrame {
 	private JTextArea getTextArea() {
 		if (textAreaStatus == null) {
 			textAreaStatus = new JTextArea();
-			textAreaStatus.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "STATUS", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+			textAreaStatus.setBorder(new TitledBorder(null, "STATUS", TitledBorder.LEADING, TitledBorder.TOP, null, Color.BLACK));
 			textAreaStatus.setWrapStyleWord(true);
 		}
 		return textAreaStatus;
